@@ -1,4 +1,3 @@
-<?php require_once 'config.php';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +15,7 @@ if (isset($_POST['submitted']))
 $sql = "UPDATE `People` SET  `name` =  '{$_POST['name']}' ,  `address` =  '{$_POST['address']}' ,  `age` =  '{$_POST['age']}' ,  `contact` =  '{$_POST['contact']}'   WHERE `id` = '$id' ";
 mysql_query($sql) or die(mysql_error());
     echo (mysql_affected_rows()) ? "Edited row.<br />" : "Nothing changed. <br />";
-    echo ('<meta http-equiv="refresh" content="0;url=http:/phpcrud/list.php">');
+    echo ('<meta http-equiv="refresh" content="1;url=http:/phpcrud/list.php">');
 }
 $row = mysql_fetch_array ( mysql_query("SELECT * FROM `People` WHERE `id` = '$id' "));
 ?>

@@ -1,4 +1,3 @@
-<?php require_once 'config.php';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,7 +32,8 @@ foreach($row AS $key => $value) { $row[$key] = stripslashes($value); }
     echo "<td valign='top'>" . ( $row['contact']) . "</td>";
 
     echo "<td valign='top'><a href=edit.php?id={$row['id']}  >Edit</a>
-     </td><td><a href=delete.php?&id={$row['id']}>Delete</a></td> ";
+     </td><td><a href=\"delete.php?id=".$row['id']."\"onclick=
+      \"return confirm('Are you sure, you want to delete?')\">Delete</a></td> ";
 
 
 
